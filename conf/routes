@@ -5,8 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET     /user                       controllers.Application.addUser
 POST    /user                       controllers.Application.addUser
 
+GET     /food                       controllers.Application.addFood
 POST    /food                       controllers.Application.addFood
 
 # Map static resources from the /public folder to the /assets URL path

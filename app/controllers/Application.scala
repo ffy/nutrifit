@@ -23,9 +23,14 @@ class Application extends Controller {
   }
 
   def addUser = Action { implicit request =>
-    val user = userForm.bindFromRequest.get
-    // TODO: Save user to database.
-    Redirect(routes.Application.index())
+    if (request.method == "GET") {
+      Ok(views.html.addUser("Add new user."))
+    }
+    else {
+      val user = userForm.bindFromRequest.get
+      // TODO: Save user to database.
+      Ok(views.html.addUser("User added."))
+    }
   }
 
   val foodForm: Form[Food] = Form {
@@ -39,9 +44,14 @@ class Application extends Controller {
   }
 
   def addFood = Action { implicit request =>
-    val food = foodForm.bindFromRequest.get
-    // TODO: Save food to database.
-    Redirect(routes.Application.index())
+    if (request.method == "GET") {
+      Ok(views.html.addFood("Add new food."))
+    }
+    else {
+      val food = foodForm.bindFromRequest.get
+      // TODO: Save food to database.
+      Ok(views.html.addFood("Food added."))
+    }
   }
 
 }
