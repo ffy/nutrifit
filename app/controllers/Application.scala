@@ -1,10 +1,7 @@
 package controllers
 
-import models.{Food, User}
-import play.api.data.Form
-import play.api.data.Forms._
+import models._
 import play.api.mvc._
-import play.api.data.format.Formats._
 
 class Application extends Controller {
 
@@ -12,44 +9,26 @@ class Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
-  val userForm: Form[User] = Form {
-    mapping(
-      "email" -> email,
-      "password" -> text,
-      "weight" -> of(doubleFormat),
-      "height" -> of(doubleFormat),
-      "gender" -> text
-    )(User.apply)(User.unapply)
-  }
-
-  def addUser = Action { implicit request =>
+  def addUser() = Action { implicit request =>
     if (request.method == "GET") {
       Ok(views.html.addUser("Add new user."))
     }
     else {
-      val user = userForm.bindFromRequest.get
-      // TODO: Save user to database.
+      val data = UserForm.form.bindFromRequest.get
+      val user = User(0, data.email, data.password, data.weight, data.height, data.gender)
+      Users.add(user)
       Ok(views.html.addUser("User added."))
     }
   }
 
-  val foodForm: Form[Food] = Form {
-    mapping(
-      "name" -> text,
-      "calories" -> of(doubleFormat),
-      "proteins" -> of(doubleFormat),
-      "carbohydrates" -> of(doubleFormat),
-      "lipids" -> of(doubleFormat)
-    )(Food.apply)(Food.unapply)
-  }
-
-  def addFood = Action { implicit request =>
+  def addFood() = Action { implicit request =>
     if (request.method == "GET") {
       Ok(views.html.addFood("Add new food."))
     }
     else {
-      val food = foodForm.bindFromRequest.get
-      // TODO: Save food to database.
+      val data = FoodForm.form.bindFromRequest.get
+      val food = Food(0, data.name, data.calories, data.proteins, data.carbohydrates, data.lipids)
+      Foods.add(food)
       Ok(views.html.addFood("Food added."))
     }
   }
