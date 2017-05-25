@@ -9,18 +9,6 @@ class Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
-  def addUser() = Action { implicit request =>
-    if (request.method == "GET") {
-      Ok(views.html.addUser("Add new user."))
-    }
-    else {
-      val data = UserForm.form.bindFromRequest.get
-      val user = User(0, data.email, data.password, data.weight, data.height, data.gender)
-      Users.add(user)
-      Ok(views.html.addUser("User added."))
-    }
-  }
-
   def addFood() = Action { implicit request =>
     if (request.method == "GET") {
       Ok(views.html.addFood("Add new food."))

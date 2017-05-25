@@ -5,8 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index
 
-GET     /user                       controllers.Application.addUser
-POST    /user                       controllers.Application.addUser
+GET     /users/list                 controllers.UserController.list
+GET     /users/:id                  controllers.UserController.user(id: Int)
+GET     /users                      controllers.UserController.create
+POST    /users                      controllers.UserController.postForm
 
 GET     /food                       controllers.Application.addFood
 POST    /food                       controllers.Application.addFood

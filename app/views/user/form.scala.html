@@ -1,0 +1,30 @@
+@(userForm: Form[User])(implicit flash: Flash,  messages: Messages)
+
+@main(title = "New User") {
+    @flash.get("success").map { message =>
+      <p>@message</p>
+    }
+
+    @if(userForm.hasGlobalErrors) {
+        <ul>
+        @for(error <- userForm.globalErrors) {
+            <li>@error.message</li>
+        }
+        </ul>
+    }
+
+    @helper.form(action = routes.UserController.postForm){
+        @helper.inputText(userForm("email"))
+        @helper.inputPassword(userForm("password"))
+        @helper.inputText(userForm("weight"))
+        @helper.inputText(userForm("height"))
+        @helper.select(
+            field = userForm("gender"),
+            options = Seq(
+                "male" -> "Male",
+                "female" -> "Female"
+            )
+        )
+        <input type="submit">
+    }
+}
