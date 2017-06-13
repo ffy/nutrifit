@@ -1,0 +1,65 @@
+<html><head>
+  <title>Nutrifit</title>
+  <meta name="description" content="website description">
+  <meta name="keywords" content="website keywords, website keywords">
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="./public/css/main.css">
+</head>
+
+<body onload="init()">
+<div id="main">
+  <div id="header">
+
+    <div id="menubar">
+      <ul id="menu">
+        <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+        <li class="selected"><a href="main.html">Home</a></li>
+        <li><a href="">Profil</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content_header"></div>
+  <div id="site_content">
+    <div>
+      <h1>Food</h1>
+      <table id="foods">
+
+      </table>
+      <table class="foodForm">
+        <tr>
+          <td><label for="name" class="label">Name</label></td>
+          <td><input id="name" type="text" class="input"></td>
+        </tr>
+        <tr>
+          <td><label for="calories" class="label">Calories</label></td>
+          <td><input id="calories" type="number" class="input"></td>
+        </tr>
+        <tr>
+          <td><label for="proteins" class="label">Proteins</label></td>
+          <td><input id="proteins" type="number" class="input"></td>
+        </tr>
+        <tr>
+          <td><label for="carbohydrates" class="label">Carbohydrates</label></td>
+          <td><input id="carbohydrates" type="number" class="input"></td>
+        </tr>
+        <tr>
+          <td><label for="lipids" class="label">Lipids</label></td>
+          <td><input id="lipids" type="number" class="input"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" class="button" value="Add" onclick="createFood('foods')"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="content_footer"></div>
+
+</div>
+
+<script type="text/javascript" src="./target/scala-2.11/client-fastopt.js"></script>
+<script>
+  init();
+  loadFoods("foods");
+</script>
+
+</body></html>

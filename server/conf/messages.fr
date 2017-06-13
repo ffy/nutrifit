@@ -1,0 +1,15 @@
+USER_NOT_FOUND = L''utilisateur demandé n''existe pas.
+DUPLICATE_EMAIL = L''adresse email fournie est déjà utilisée par un autre utilisateur
+NOT_AUTHENTICATED = Vous n''êtes pas authentifiés
+BAD_CREDENTIALS = Mauvais nom d''utilisateur ou/et mot de passe
+
+# User Form
+email.error.required=L''email est vide
+email.error.email=L''email n''a pas un format valide
+password.error.required=Le mot de passe est vide
+password.error.minLength=Le mot de passe doit contenir au minimum {0} caractères
+weight.error.required=Le poids est vide
+weight.error.number=Le poids doit être un nombre
+height.error.required=La taille est vide
+height.error.number=La taille doit être un nombre
+gender.error.required=Le sexe est vide

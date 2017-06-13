@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrifit</title>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+    <link rel="stylesheet" href="./public/css/index.css">
+</head>
+<body>
+   <div class="login-wrap">
+    	<div class="login-html">
+    		<input id="login" type="radio" name="tab" class="sign-in" checked><label for="login" class="tab">SignIn</label>
+    		<input id="register" type="radio" name="tab" class="sign-up"><label for="register" class="tab">SignUp</label>
+    		<div class="login-form">
+    			<div class="sign-in-htm">
+    				<div class="group">
+    					<label for="emailLogin" class="label">Email Address</label>
+    					<input id="emailLogin" type="email" class="input">
+    				</div>
+    				<div class="group">
+    					<label for="passwordLogin" class="label">Password</label>
+    					<input id="passwordLogin" type="password" class="input" data-type="password">
+    				</div>
+    				<div class="group">
+    					<input type="submit" class="button" value="Sign In" onclick="login()">
+    				</div>
+    			</div>
+    			<div class="sign-up-htm">
+    	      <div class="group">
+    					<label for="email" class="label">Email Address</label>
+    					<input id="email" type="email" class="input">
+    				</div>
+    				<div class="group">
+    					<label for="password" class="label">Password</label>
+    					<input id="password" type="password" class="input" data-type="password">
+    				</div>
+    				<div class="group">
+    					<label for="gender" class="label">Gender</label>
+    					<select id="gender" class="input">
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+    				</div>
+            <div class="group">
+    					<label for="weight" class="label">Weight</label>
+    					<input id="weight" type="number" class="input">
+    				</div>
+            <div class="group">
+    					<label for="height" class="label">Height</label>
+    					<input id="height" type="number" class="input">
+    				</div>
+    				<div class="group">
+    					<input type="submit" class="button" value="Sign Up" onclick="register()">
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  <!-- Include Scala.js compiled code -->
+  <script type="text/javascript" src="./target/scala-2.11/client-fastopt.js"></script>
+
+   <script
+		   src="https://code.jquery.com/jquery-3.2.1.js"
+		   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		   crossorigin="anonymous"></script>
+</body>
+</html>

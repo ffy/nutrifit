@@ -1,0 +1,15 @@
+USER_NOT_FOUND = The requested user does not exist
+DUPLICATE_EMAIL = Provided email is already used by another user
+NOT_AUTENTICATED = You are not authenticated
+BAD_CREDENTIALS = Bad credentials
+
+# User Form
+email.error.required=You must provide an email
+email.error.email=You must provide a valid email
+password.error.required=You must provide a password
+password.error.minLength=You must provide a password with a length of {0} at least
+weight.error.required=You must provide an weight
+weight.error.number=You must provide a valid weight
+height.error.required=You must provide an height
+height.error.number=You must provide a valid height
+gender.error.required=You must provide an gender

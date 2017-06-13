@@ -1,1 +1,0 @@
-USER_NOT_FOUND = L''utilisateur demandé n''existe pas.
